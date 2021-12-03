@@ -1,0 +1,17 @@
+{
+  "name": "magearray/module-testimonials",
+  "description": "Testimonials Extension for Magento 2 by MageArray",
+  "type": "magento2-module",
+  "version": "1.0.3",
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MageArray\\Testimonials\\": ""
+    }
+  }
+}

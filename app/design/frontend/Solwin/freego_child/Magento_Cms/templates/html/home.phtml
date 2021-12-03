@@ -1,0 +1,317 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+$mtwoHelper = $objectManager->get('Mtwo\Configurations\Helper\Data'); 
+
+?>
+<?= $block->getLayout()->createBlock('Mageplaza\BannerSlider\Block\Widget')->setSliderId(1)->toHtml();?>
+<!---------- START FOR SERVICES ------------------>
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('home_service_block')->toHtml();?>
+ 
+<!---------- END FOR SERVICES ------------------>
+
+<div class="our-sign-outer">
+<!---------- START FOR TAB PRODUCTS ------------------>
+<?php for($i=1;$i<=10;$i++){ 
+	$enabled  = $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_'.$i.'/enable_tab');
+ if($enabled == 1){
+	
+}else{
+	continue;
+}
+?>
+
+<div class="signature-main-outer">
+	<div class="our-signature-wine">
+		<div class="block-title-main">
+			<h2 role="heading" aria-level="2"><span><?= $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_'.$i.'/title')?></span> </h2>
+			<div class="title-border"></div>
+		</div>
+		<div id="tab_element_<?php echo $i; ?>" class="nav-tabs-wrapper">
+			<ul class="tabs-horiz" >
+				<li class="ui-state-default-link">
+					<a href="#tab1_content_<?php echo $i; ?>">
+						<span>
+							<?= $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_'.$i.'/subtab1')?>         
+						</span>
+					</a>
+				</li>
+				<li class="ui-state-default-link">
+					<a href="#tab2_content_<?php echo $i; ?>">
+						<span>
+							<?= $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_'.$i.'/subtab2')?>
+						</span>
+					</a>
+				</li>
+				<li class="ui-state-default-link">
+					<a href="#tab3_content_<?php echo $i; ?>">
+						<span>
+							<?= $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_'.$i.'/subtab3')?>
+						</span>
+					</a>
+				</li>     
+
+			</ul>
+		</div>
+		<div id="tab_element_content_<?php echo $i; ?>">
+			<div id="tab1_content_<?php echo $i; ?>" >
+				<div>
+					<div> 
+					<?php  $tabSlider1 = $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_'.$i.'/productslider1'); 
+								if($tabSlider1){
+								$tab1ProductType = $mtwoHelper->getSliderProductType($tabSlider1);
+							?>
+								<?= $block->getLayout()->createBlock('Mageplaza\Productslider\Block\Widget\Slider')->setSliderId($tabSlider1)->setProductType($tab1ProductType)->toHtml(); ?>
+						<?php } ?>
+					</div>
+				</div>
+			</div>
+			<div id="tab2_content_<?php echo $i; ?>" >
+				<div>
+					<div><?php  $tabSlider1 = $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_'.$i.'/productslider2'); 
+								if($tabSlider1){
+								$tab1ProductType = $mtwoHelper->getSliderProductType($tabSlider1);
+							?>
+								<?= $block->getLayout()->createBlock('Mageplaza\Productslider\Block\Widget\Slider')->setSliderId($tabSlider1)->setProductType($tab1ProductType)->toHtml();?>
+							<?php } ?>
+					</div>
+				</div>
+			</div>
+			<div id="tab3_content_<?php echo $i; ?>" >
+				<div> 
+					<div><?php  $tabSlider1 = $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_'.$i.'/productslider3'); 
+								if($tabSlider1){
+								$tab1ProductType = $mtwoHelper->getSliderProductType($tabSlider1);
+							?>
+								<?= $block->getLayout()->createBlock('Mageplaza\Productslider\Block\Widget\Slider')->setSliderId($tabSlider1)->setProductType($tab1ProductType)->toHtml();?>
+					<?php } ?>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<script>
+    require(["jquery","mage/backend/tabs"], function($){
+        $(function() {
+            $('#tab_element_<?php echo $i; ?>').tabs({
+                active: 'tab1_content_<?php echo $i; ?>',  // active tab elemtn id
+                destination: '#tab_element_content_<?php echo $i; ?>', // tab content destination element id
+                shadowTabs: []        
+            });
+        });
+    });
+</script>
+</div>
+
+
+<?php } ?>
+	</div>
+<!---------- END FOR TAB PRODUCTS ------------------>
+
+<!---------- START FOR MIDDLE SLIDER COLLECTION ------------------>
+<div class="widget-section">
+    <div class="widget-inner">
+        <div class="row">
+            <div class="col-md-4"> 
+                <div class="best-collection-section">
+                    <h2><?php echo $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_0/bestcollection_title'); ?></h2>
+    				<h3><?php echo $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_0/bestcollection_subtitle'); ?></h3>
+					<?php  $catId = $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_0/bestcollection_link'); 
+					if(!empty($catId) && $catId != 2 ){
+					?>
+    				<div class="view-more-btn"><a href="<?php $mtwoHelper->getCategoryUrl($catId); ?>"><?php echo __('Explore Now'); ?></a></div>
+					<?php } ?>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="widget-slider">
+					<?php $collectionBanner = $mtwoHelper->getHomePageSliderValues('homepage_tabs/tab_group_0/bestcollection'); ?>
+                    <?= $block->getLayout()->createBlock('Mageplaza\BannerSlider\Block\Widget')->setSliderId($collectionBanner)->setTemplate('Mageplaza_BannerSlider::collection.phtml')->toHtml();?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---------- END FOR MIDDLE SLIDER COLLECTION ------------------>
+
+<!---------- START FOR SPECIAL PRODUCTS ------------------>
+<div class="special-product-sesction">
+    <div class="special-products-title">
+         <div class="block-title-main">
+			 <h2><span>Special Product</span></h2>
+            <div class="title-border"></div>
+        </div>
+     </div>
+	 
+	
+    <div class="product-list special-listing">
+        <?php 
+         
+        $productsBlock = $block->getLayout()->createBlock(\Magento\Catalog\Block\Product\Widget\NewWidget::class);
+//$productsBlock->setTitle("Special Product");
+$productsBlock->setProductsCount(9);
+$productsBlock->setTemplate("product/widget/new/content/new_grid.phtml");
+$productsBlock->setConditions(
+    [
+        1 => [
+            'type' => \Magento\CatalogWidget\Model\Rule\Condition\Combine::class,
+            'aggregator' => 'all',
+            'value' => '1',
+            'new_child' => '',
+        ],
+        '1-1' => [
+            'type' => \Magento\CatalogWidget\Model\Rule\Condition\Product::class,
+            'attribute' => 'is_featured',
+            'operator' => '==',
+            'value' => '1',
+        ]
+    ]
+);
+         echo $productsBlock->toHtml();
+
+        ?>
+       
+    </div>
+</div>
+<!---------- END FOR SPECIAL PRODUCTS ------------------>
+
+
+<!---------- START FOR TODAY DEAL ------------------>
+ <div class="today-deal-seaction" style="display:none">
+     <div class="deal-inner">
+         <div class="row">
+             <div class="col-md-6"></div>
+             <div class="col-md-6">
+                 <div class="deal-offer">
+                     <h3><span>Today's Deal</span></h3>
+                     <h2>Quisque Ultrices ante non nisi</h2>
+                     <h4>Offer ends in hurry up!</h4>
+                     <div class="deal-timer">
+                         <span class="deal-circle">
+                             <span class="deal-count">22</span>
+                             <span>Hours</span>
+                         </span>
+                         <span class="deal-circle">
+                             <span class="deal-count">0</span>
+                             <span>Minutes</span>
+                         </span>
+                         <span class="deal-circle">
+                             <span class="deal-count">22</span>
+                             <span>Seconds</span>
+                         </span>
+                     </div>
+                     <div class="deal-content">
+                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                         <div class="price">$39.00 <span>$49.00</span></div>
+                         <div class="view-more-btn"><a href="#">Shop Now</a></div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+<!---------- END FOR TODAY DEAL ------------------>
+
+ 
+<div class="row">
+    <div class="col-md-6">
+<!---------- START FOR TESTIMONIALS ------------------>
+<div class="testi-section">
+<?php  
+echo $block->getLayout()
+          ->createBlock('Magento\Cms\Block\Widget\Block')
+                   ->setTemplate('widget/static_block/default.phtml')
+->setTitle('Testimonials')
+          ->setBlockId('home_testimonials')
+          ->toHtml();
+	
+	
+// 
+?>
+	 
+
+<div class="view-more-btn"><a target="_blank" href="<?php echo $this->getUrl('testimonials'); ?>">View more testimonial</a></div>
+</div>
+<!---------- END FOR TESTIMONIALS ------------------>
+    </div>
+    <div class="col-md-6">
+<!---------- START FOR BLOG  ------------------>
+<div class="latest-post-section">
+<?php  
+ echo  $block->getLayout()
+          ->createBlock('Magento\Cms\Block\Widget\Block')
+                    ->setTemplate('widget/static_block/default.phtml')
+->setTitle('Blog')
+          ->setBlockId('home_blogs')
+          ->toHtml();
+	 
+   
+ 
+
+?>
+<div class="view-more-btn"><a target="_blank" href="<?php echo $this->getUrl('blog'); ?>">View all</a>
+	</div>
+</div>
+<!---------- END FOR BLOG  ------------------>
+    </div>
+</div>
+
+<!---------- START FOR BRANDS ------------------>
+<div class="brand-section">
+<?php  
+echo $block->getLayout()
+          ->createBlock('Ves\Brand\Block\BrandList')
+           ->setBlockId('brand_list')
+          ->toHtml();
+
+?>
+</div>
+<!---------- END FOR BRANDS ------------------>
+
+<!---------- START FOR WEEKLY SPECIALS ------------------>
+<div class="special-offers-end" style="display:none">
+    <div class="special-offer-title">
+         <div class="block-title-main">
+			 <h2><span>Weekly's Special</span></h2>
+            <div class="title-border"></div>
+        </div>
+     </div>
+    <div class="special-offer-products">
+         <div class="row">
+            <div class="col-md-6">
+                <div class="brand-image">
+ 					<a href="" class="">
+					    <img src="https://werkmen.com/pow_client/pub/media/wysiwyg/pexels-dayvison-de-oliveira-silva-5695916.jpg">						
+					    <span class="empty-span-img"></span>
+					</a>
+				</div>
+				<div class="offer-product-content">
+				    <h2>The Most Popular Wine</h2>
+				    <h3>Sale 10% off on selected Items. - CODE: POSH85</h3>
+				    <div class="special-content">
+				        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+				    </div>
+				    <div class="view-more-btn"><a href="#">Explore Now</a></div>
+				</div>
+			</div>
+            <div class="col-md-6">
+                <div class="brand-image">
+ 					<a href="" class="">
+					    <img src="https://werkmen.com/pow_client/pub/media/wysiwyg/pexels-dayvison-de-oliveira-silva-5695916.jpg">						
+					    <span class="empty-span-img"></span>
+					</a>
+				</div>
+				<div class="offer-product-content">
+				    <h2>The Most Popular Wine</h2>
+				    <h3>Sale 10% off on selected Items. - CODE: POSH85</h3>
+				    <div class="special-content">
+				        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+				    </div>
+				    <div class="view-more-btn"><a href="#">Explore Now</a></div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+<!---------- END FOR WEEKLY SPECIALS ------------------>

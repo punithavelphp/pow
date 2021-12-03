@@ -1,0 +1,19 @@
+<?php
+/**
+ * @package     Plumrocket_ShippingTracking
+ * @copyright   Copyright (c) 2018 Plumrocket Inc. (https://www.plumrocket.com)
+ * @license     https://www.plumrocket.com/license/  End-user License Agreement
+ */
+?>
+
+<div class="pp-buttons-container">
+    <button id="<?= $block->getHtmlId() ?>" onclick="<?= /* @noEscape */ $block->getOnclick($block->getHtmlId()) ?>">
+        <span>
+            <span>
+                <span>
+                    <?= $block->escapeHtml($block->getButtonLabel()) ?>
+                </span>
+            </span>
+        </span>
+    </button>
+</div>

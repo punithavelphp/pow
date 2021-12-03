@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="MMA\CustomApi\Api\CategoryManagementInterface" type="MMA\CustomApi\Model\CategoryManagement"></preference>
+    <preference for="MMA\CustomApi\Api\BraintreeConfigProviderInterface" type="MMA\CustomApi\Model\Braintree\Ui\ConfigProvider"></preference>
+    <preference for="MMA\CustomApi\Api\PaymentTokenManagementInterface" type="MMA\CustomApi\Model\PaymentTokenManagement"></preference>
+    <preference for="MMA\CustomApi\Api\VersionInterface" type="MMA\CustomApi\Model\Version"></preference>
+    <preference for="MMA\CustomApi\Api\MostViewedRepositoryInterface" type="MMA\CustomApi\Model\MostViewedRepository"></preference>
+    <preference for="MMA\CustomApi\Api\BestSellerRepositoryInterface" type="MMA\CustomApi\Model\BestSellerRepository"></preference>
+    <preference for="MMA\CustomApi\Api\TopRatedRepositoryInterface" type="MMA\CustomApi\Model\TopRatedRepository"></preference>
+    <preference for="MMA\CustomApi\Api\NewProductsRepositoryInterface" type="MMA\CustomApi\Model\NewProductsRepository"></preference>
+    <preference for="MMA\CustomApi\Api\Data\RatingInterface" type="MMA\CustomApi\Model\Review\RatingData"></preference>
+    <preference for="MMA\CustomApi\Api\ReviewInterface" type="MMA\CustomApi\Model\Review\ReviewManagement"></preference>
+    <preference for="MMA\CustomApi\Api\Data\ResponseInterface" type="MMA\CustomApi\Model\Data\ResponseModel"></preference>
+    <preference for="MMA\CustomApi\Api\ContactRepositoryInterface" type="MMA\CustomApi\Model\Form\ContactRepository"></preference>
+    <preference for="MMA\CustomApi\Api\PayPal\Transparent\SecurityTokenInterface" type="MMA\CustomApi\Model\PayPal\Transparent\SecureToken"></preference>
+    <preference for="MMA\CustomApi\Api\PayPal\Transparent\SecurityTokenManagerInterface" type="MMA\CustomApi\Model\PayPal\Transparent\SecureTokenManager"></preference>
+</config>

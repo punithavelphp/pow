@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/pow/categories" method="GET">
+        <service class="MMA\CustomApi\Api\CategoryManagementInterface" method="getTree" />
+        <resources>
+            <resource ref="Magento_Catalog::categories" />
+        </resources>
+    </route>
+
+    <route url="/V1/pow/braintree/token" method="GET">
+        <service class="MMA\CustomApi\Api\BraintreeConfigProviderInterface" method="getClientToken" />
+        <resources>
+            <resource ref="Magento_Backend::admin" />
+        </resources>
+    </route>
+
+    <route url="/V1/pow/me/vault/items" method="GET">
+        <service class="MMA\CustomApi\Model\PaymentTokenManagement" method="getListByCustomerId"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+
+    <route url="/V1/pow/me/vault/nonce" method="GET">
+        <service class="MMA\CustomApi\Api\PaymentTokenManagementInterface" method="getPaymentNonce"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+
+    <route url="/V1/pow/magento/version" method="GET">
+        <service class="MMA\CustomApi\Api\VersionInterface" method="getVersion" />
+        <resources>
+            <resource ref="Magento_Backend::admin" />
+        </resources>
+    </route>
+
+    <route url="/V1/pow/products/most-viewed/:limit" method="GET">
+        <service class="MMA\CustomApi\Api\MostViewedRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <route url="/V1/pow/products/best-seller/:limit" method="GET">
+        <service class="MMA\CustomApi\Api\BestSellerRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <route url="/V1/pow/products/top-rated/:limit" method="GET">
+        <service class="MMA\CustomApi\Api\TopRatedRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <route url="/V1/pow/products/new/:limit" method="GET">
+        <service class="MMA\CustomApi\Api\NewProductsRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <route url="/V1/pow/review/reviews/:productId" method="GET">
+        <service class="MMA\CustomApi\Api\ReviewInterface" method="getReviewsList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
+    <route url="/V1/pow/rating/ratings/:store_id" method="GET">
+        <service class="MMA\CustomApi\Api\ReviewInterface" method="getRatings"/>
+        <resources>
+            <resource ref="Magento_Review::ratings" />
+        </resources>
+    </route>
+
+    <route url="/V1/pow/review/mine/post" method="POST">
+        <service class="MMA\CustomApi\Api\ReviewInterface" method="writeReviews"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customer_id" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+
+    <route url="/V1/pow/review/guest/post" method="POST">
+        <service class="MMA\CustomApi\Api\ReviewInterface" method="writeReviews"/>
+        <resources>
+            <resource ref="Magento_Review::reviews_all" />
+        </resources>
+    </route>
+
+    <route url="/V1/pow/contact/post" method="POST">
+        <service class="MMA\CustomApi\Api\ContactRepositoryInterface" method="contact"/>
+        <resources>
+            <resource ref="Magento_Backend::admin" />
+        </resources>
+    </route>
+
+    <route url="/V1/pow/paypal/transparent/securityToken/:quote_id" method="GET">
+        <service class="MMA\CustomApi\Api\PayPal\Transparent\SecurityTokenManagerInterface" method="getSecurityToken"/>
+        <resources>
+            <resource ref="Magento_Backend::admin" />
+        </resources>
+    </route>
+
+</routes>

@@ -1,0 +1,27 @@
+<?php
+$_brandCollection       = $block->getBrandCollection();
+$_helper                = $this->helper('Ves\Brand\Helper\Data');
+$title                  = $this->getConfig('widget_title');
+$show_brand_name        = $this->getConfig('show_brand_name');
+
+$blockId                = rand().time();
+$addition_class         = $this->getConfig('addition_class');
+?>
+<?php if ( $_brandCollection->count() ){ ?>
+<div class="block widget ves-widget brand-widget <?php echo $addition_class?$addition_class:'' ?>">
+	<?php if($title){ ?>
+	<div class="block-title"><strong><?php echo $title ?></strong></div>
+	<?php } ?>
+	<div class="block-content brandowl-play">
+		<ul id="ves-carousel<?php echo $blockId ?>" >
+			<?php foreach ($_brandCollection as $_brand) { ?>
+			<li class="item">				
+				<div class="brand-item">
+					<div class="brand-name"><a href="<?php echo $_brand->getUrl(); ?>" title="<?php echo $_brand->getName(); ?>"><?php echo $_brand->getName() ?></a></div>
+				</div>
+			</li>
+			<?php } ?>
+		</ul>
+	</div>
+</div>
+<?php } ?>

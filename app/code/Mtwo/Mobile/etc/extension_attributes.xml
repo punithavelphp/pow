@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+     
+    <extension_attributes for="Magento\Quote\Api\Data\TotalsItemInterface">
+        <attribute code="image" type="\Magento\Catalog\Api\Data\ProductInterface[]"/>
+     </extension_attributes>
+ 	<extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
+        <attribute code="custom_configurable_values" type="\Magento\Catalog\Api\Data\ProductInterface[]"/>
+        <attribute code="custom_product_links" type="\Magento\Catalog\Api\Data\ProductInterface[]"/>
+        <attribute code="custom_special_price" type="string"/>
+        <attribute code="custom_special_price_from" type="string"/>
+        <attribute code="custom_special_price_to" type="string"/>
+        <attribute code="custom_final_price" type="string"/>
+        <attribute code="custom_stock_qty" type="int"/>
+        <attribute code="custom_stock_status" type="int"/>
+        <attribute code="original_final_price" type="string"/>
+        <attribute code="custom_qty" type="int"/>
+        <attribute code="custom_stock_item" type="\Magento\CatalogInventory\Api\Data\StockItemInterface"/>
+        <attribute code="options" type="Magento\ConfigurableProduct\Api\Data\OptionInterface[]"/>
+ 
+    </extension_attributes>
+
+     
+</config>

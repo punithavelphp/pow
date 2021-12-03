@@ -1,0 +1,54 @@
+<h2 class="widget-title"> Testimonials     </h2>
+<?php $baseUrl= $block->getBaseUrl(); ?>
+<?php
+$mediaUrl = $block->getMediaUrl();
+$testimonialrecords = $block->sidebarCollection();
+if ($testimonialrecords && count($testimonialrecords)) {
+    ?>
+<div class="testimonialslider sidebar-testimonial">
+    <div class="slides">
+        <?php
+        foreach ($testimonialrecords as $tetimonial) {
+            ?>
+            <div class="testimonial-widget item">
+                <div class="quote">
+                    <p><?= /* @noEscape */ $tetimonial->getData('testimonial'); ?></p>
+                </div>
+                <div class="student">
+                    <div class="photo">
+                        <?php $path = $tetimonial->getData('avatar_path'); ?>
+
+                        <?php if (isset($path) && $path != ''): ?>
+                            <img src="<?= /* @noEscape */ $mediaUrl . $tetimonial->getData('avatar_path');?>"
+                            width="100" height="100" />
+                        <?php else: ?>
+                            <img src="<?= /* @noEscape */ $block->getDefaultImage();?>" width="100" height="100" />
+                        <?php endif; ?>
+                    </div>
+                    <p><?= /* @noEscape */ $tetimonial->getData('name'); ?></p>
+                </div>
+            </div>
+            <?php } ?>
+    </div>
+</div>
+    <?php } ?>
+
+
+
+<script>
+    require([
+        'jquery',
+        'testimonialSlider'
+    ], function($){
+         $(".testimonialslider .slides").owlCarousel({
+        autoPlay: 5000,
+        items : 1,
+        itemsDesktop : [1199,1],
+        itemsTablet: [768,1],
+        itemsDesktopSmall : [979,1],
+        itemsMobile : [750,1],
+        pagination:false,
+        navigation:true
+      });
+    });
+</script>

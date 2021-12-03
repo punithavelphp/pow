@@ -1,0 +1,21 @@
+MageArray_Testimonials
+
+-------------
+  CHANGELOG
+-------------
+
+===== 1.0.0 =====
+ * Initial stable M2 release
+
+===== 1.0.1 =====
+ * Bug fixes
+ * Magento 2.2 compatibility
+
+===== 1.0.2 =====
+ * Bug fixes
+ * Magento 2.3.3 compatibility
+
+===== 1.0.3 =====
+ * Magento 2.3.5 compatibility
+ * Delete css empty file
+

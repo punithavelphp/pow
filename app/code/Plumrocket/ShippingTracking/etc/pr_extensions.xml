@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Plumrocket_ShippingTracking
+ * @copyright   Copyright (c) 2021 Plumrocket Inc. (https://www.plumrocket.com)
+ * @license     https://www.plumrocket.com/license/  End-user License Agreement
+ */
+-->
+<extensions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="urn:magento:module:Plumrocket_Base:etc/pr_extensions.xsd">
+    <extension name="ShippingTracking"
+               title="Order Status &amp; Shipping Tracking"
+               config_section="prshippingtracking"
+               is_enabled_path="prshippingtracking/general/enabled"
+               wiki="http://wiki.plumrocket.com/Magento_2_Order_Status_and_Shipping_Tracking_v1.x_Extension"
+    />
+</extensions>

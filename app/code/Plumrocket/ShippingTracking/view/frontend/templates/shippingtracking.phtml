@@ -1,0 +1,65 @@
+<?php
+/**
+ * @package     Plumrocket_ShippingTracking
+ * @copyright   Copyright (c) 2018 Plumrocket Inc. (https://www.plumrocket.com)
+ * @license     https://www.plumrocket.com/license/  End-user License Agreement
+ */
+
+/** @var \Plumrocket\ShippingTracking\Block\Tracking $block */
+?>
+<div class="block block-shippingtracking">
+    <div class="page-title-wrapper">
+        <h1 class="page-title"
+            id="block-shippingtracking-heading"
+            role="heading"
+            aria-level="2"
+        ><?= $block->escapeHtml(__('Check Order Status')) ?></h1>
+    </div>
+    <div class="block-content" aria-labelledby="block-shippingtracking-heading">
+        <form class="form form-shippingtracking"
+              action="<?= $block->escapeUrl($block->getSearchUrl()) ?>"
+              method="post"
+              id="shippingtracking-form"
+              data-mage-init='{"validation":{}}'>
+            <?= $block->getBlockHtml('formkey') ?>
+            <fieldset class="fieldset shippingtracking"
+                      data-hasrequired="<?= $block->escapeHtml(__('* Required Fields')) ?>">
+                <div class="field order">
+                    <?= $block->escapeHtml(__('Please enter the required information below to check your order status.')) ?>
+                </div>
+                <div class="field order required">
+                    <label class="label" for="order"><span><?= $block->escapeHtml(__('Order Number')) ?></span></label>
+                    <div class="control">
+                        <input name="shippingtracking[order]"
+                               id="order"
+                               type="text"
+                               class="input-text required"
+                               title="<?= $block->escapeHtml(__('Order Number')) ?>"/>
+                    </div>
+                </div>
+                <div class="field info required">
+                    <label for="info" class="label">
+                        <span><?= $block->escapeHtml(__('Phone number or email address')) ?></span>
+                    </label>
+                    <div class="control">
+                        <input name="shippingtracking[info]"
+                               id="info"
+                               type="text"
+                               class="input-text required"
+                               title="<?= $block->escapeHtml(__('Phone number or email address')) ?>"/>
+                    </div>
+                </div>
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button type="submit"
+                                class="action shippingtracking primary"
+                                name="send_order_info"
+                                id="send_order_info">
+                            <span><?= $block->escapeHtml(__('Track Order')) ?></span>
+                        </button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

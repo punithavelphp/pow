@@ -1,0 +1,59 @@
+"Add New Testimonial","Add New Testimonial"
+"Add New","Add New"
+Save,Save
+"Save and Continue Edit","Save and Continue Edit"
+Delete,Delete
+"Edit '%1'","Edit '%1'"
+New,New
+Testimonials,Testimonials
+Name,Name
+Email,Email
+Avatar,Avatar
+Testimonial,Testimonial
+Status,Status
+"Store View","Store View"
+General,General
+Information,Information
+ID,ID
+Active,Active
+Edit,Edit
+"Are you sure?","Are you sure?"
+"Change status","Change status"
+"Testimonial List","Testimonial List"
+"The entry has been deleted.","The entry has been deleted."
+"We can't find a entry to delete.","We can't find a entry to delete."
+MageArray,MageArray
+"Edit Entry","Edit Entry"
+"This entry no longer exists.","This entry no longer exists."
+"Manage Testimonial","Manage Testimonial"
+"New Testimonial","New Testimonial"
+"Manage Testimonials","Manage Testimonials"
+"Please select Testimonial.","Please select Testimonial."
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"Please select Testimonials.","Please select Testimonials."
+"A total of %1 record(s) have been updated.","A total of %1 record(s) have been updated."
+"The Testimonial has been saved.","The Testimonial has been saved."
+"Something went wrong while saving the entry.","Something went wrong while saving the entry."
+"Testimonials details have been inserted successfully.","Testimonials details have been inserted successfully."
+"Uploaded image is not valid.","Uploaded image is not valid."
+None,None
+"Left Block","Left Block"
+"Right Block","Right Block"
+Enabled,Enabled
+Disabled,Disabled
+"* Required Fields","* Required Fields"
+name,name
+email,email
+"Upload Avatar","Upload Avatar"
+Submit,Submit
+"MageArray Extension","MageArray Extension"
+"Extension Configuration","Extension Configuration"
+"Review required for testimonials?","Review required for testimonials?"
+"Display in Sidebar","Display in Sidebar"
+"Enable Infinite Scroll","Enable Infinite Scroll"
+"Add testimonial widget anywhere in site","Add testimonial widget anywhere in site"
+Order,Order
+"Accending by date","Accending by date"
+"Descending by date","Descending by date"
+Random,Random
+Count,Count

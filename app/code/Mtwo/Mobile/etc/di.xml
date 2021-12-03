@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Mtwo\Mobile\Api\ProductBlockInterface" type="Mtwo\Mobile\Model\ProductBlock"/>
+	<preference for="Mtwo\Mobile\Api\LayeredSearchInterface" type="Mtwo\Mobile\Model\LayeredSearch"/>
+	<preference for="Mtwo\Mobile\Api\ConfigInterface" type="Mtwo\Mobile\Model\Config"/>
+	<preference for="Magento\Customer\Api\AccountManagementInterface" type="Mtwo\Mobile\Model\AccountManagement" />
+ 
+  	 <!-- plugin for adding image key in cart total api -->
+    <type name="Magento\Quote\Api\CartTotalRepositoryInterface">
+        <plugin name="mtwo_cart_item_image"
+                type="Mtwo\Mobile\Plugin\CartImage"/>
+    </type>
+	 
+ <!--
+	<type name="Magento\Quote\Model\Quote\Item\Repository">
+        <plugin name="add_seller_cart_item" type="Mtwo\Mobile\Plugin\Quote\Item\Repository"/>
+    </type>
+	<type name="Magento\Catalog\Api\ProductRepositoryInterface">
+        <plugin name="add_seller_data_repo" type="Mtwo\Mobile\Plugin\ProductRepositoryPlugin"/>
+    </type>  -->
+</config>

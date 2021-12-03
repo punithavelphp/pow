@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Plumrocket_ShippingTracking
+ * @copyright   Copyright (c) 2018 Plumrocket Inc. (https://www.plumrocket.com)
+ * @license     https://www.plumrocket.com/license/  End-user License Agreement
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="shippingtracking" frontName="shippingtracking">
+            <module name="Plumrocket_ShippingTracking" />
+        </route>
+    </router>
+</config>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    
+	<route url="/V1/storeconfig/:lang" method="GET">
+        <service class="Mtwo\Mobile\Api\ConfigInterface" method="getConfig"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources> 
+    </route>
+	<route url="/V1/region/:countrycode" method="GET">
+        <service class="Mtwo\Mobile\Api\ConfigInterface" method="getRegionsOfCountry"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources> 
+    </route>
+	<route url="/V1/invoice/:invoiceId" method="GET">
+        <service class="Mtwo\Mobile\Api\ConfigInterface" method="getInvoice"/>
+        <resources>
+            <resource ref="self" />
+        </resources> 
+    </route>
+	<route url="/V1/productblocks/:blockId" method="GET">
+        <service class="Mtwo\Mobile\Api\ProductBlockInterface" method="getProductBlocks"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources> 
+    </route>
+	<route url="/V1/bannersliderblocks/:blockId" method="GET">
+        <service class="Mtwo\Mobile\Api\ProductBlockInterface" method="getMobileBannerSlider"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources> 
+    </route>
+	<route url="/V1/bannerblocks/:blockId" method="GET">
+        <service class="Mtwo\Mobile\Api\ProductBlockInterface" method="getMobileBanner"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources> 
+    </route>
+	  <route url="/V1/layerednavigation/:category" method="GET">
+        <service class="Mtwo\Mobile\Api\LayeredSearchInterface" method="searchLayeredFilter"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources> 
+    </route>
+</routes>

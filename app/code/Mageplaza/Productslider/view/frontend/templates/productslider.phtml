@@ -1,0 +1,84 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Productslider
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+
+use Mageplaza\Productslider\Block\AbstractSlider;
+use Magento\Framework\App\Action\Action;
+/** @var AbstractSlider $block */
+$mode = 'grid'; 
+$title = $block->getTitle();
+$blockId = $block->getSliderId() . uniqid('-', false);
+$items = $block->getProductCollection();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$helperData = $objectManager->get('Mtwo\Configurations\Helper\Data');
+if ($items && $items->getSize()) : ?>
+    <div class="block-content mp-product-slider-content">
+        <div class="products-grid grid">
+            <ol class="product-items widget-viewed-grid">
+                <?php $iterator = 1; ?>
+                <div id="mp-list-items-<?= /** @noEscape */ $blockId ?>"
+                     class="caraousel-find-check owl-carousel owl-theme">
+                    <?php  foreach ($items->getData() as $product) : 
+						$_item = $objectManager->create('Magento\Catalog\Model\Product')->load($product['entity_id']);
+						$helperData->setProductTab($_item);?>
+                        <?= ($iterator++ == 1) ? '<li class="product-item product-slider"">' : '</li><li class="product-item product-slider"">' ?>
+                        <div class="slider-product-item-info">
+                            <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
+                               class="product photo slider-product-item-photo">
+                                <?=  $block->getImage($_item, 'recently_viewed_products_grid_content_widget')->toHtml(); ?>
+                            </a>
+                            <div class="product details slider-product-item-details">
+                                <strong class="product name product-item-name">
+                                    <a title="<?= $block->escapeHtml($_item->getName()) ?>"
+                                       href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>">
+                                        <?= $block->escapeHtml($_item->getName()) ?>
+                                    </a>
+                                </strong>
+								<?php if ($block->canShowPrice()) : ?>
+									<?= /** @noEscape */ $block->getProductPrice($_item) ?>
+								<?php endif; ?>
+
+                                    <?php if ($block->canShowReview()) : ?>
+                                        <?= $block->getReviewsSummaryHtml($_item, 'short', true) ?>
+                                    <?php endif; ?>
+								<a href="#" class="action towishlist actions-secondary"
+										   title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+										   aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+										   data-post='<?php echo $block->getAddToWishlistParams($_item); ?>'
+										   data-action="add-to-wishlist"
+										   role="button">
+											<span><?php echo __('Add to Wish List') ?></span>
+										</a>
+                                </div>
+                            </div>
+                            <?= ($iterator === count($items) + 1) ? '</li>' : '' ?>
+                    <?php endforeach ?>
+                    </div>
+                </ol>
+            </div>
+            <?= $block->getPagerHtml() ?>
+        </div>
+    <script>
+        require(['jquery', 'mageplaza/core/owl.carouselMtwo'], function ($) {
+            $('#mp-list-items-<?= /** @noEscape */ $blockId ?>').owlCarouselMtwo({loop:true,margin:10,nav:true,"navText":["<em class='porto-icon-left-open-huge'><\/em>","<em class='porto-icon-right-open-huge'><\/em>"],dots:false,lazyLoad:true,autoplay:true,autoplayTimeout:5000,autoplayHoverPause:false,responsive:{0:{items:2},640:{items:2},768:{items:4},992:{items:6},1200:{items:7}, 1500:{items:8}}});
+        });
+    </script>
+<?php endif; ?>
+

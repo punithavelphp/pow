@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>		
+<!-- <add id="Mtwo_ProductAttributes::menu" title="ProductAttributes" module="Mtwo_ProductAttributes"    sortOrder="18" resource="Mtwo_CategoriesBySale::productattributes"/> 
+		<add id="Mtwo_ProductAttributes::ProductAttributes" title="ProductAttributes" module="Mtwo_ProductAttributes"  sortOrder="12"  action="productattributes/index/index" parent="Mtwo_ProductAttributes::menu"  resource="Mtwo_CategoriesBySale::productattributes"/> -->
+	</menu>
+</config>

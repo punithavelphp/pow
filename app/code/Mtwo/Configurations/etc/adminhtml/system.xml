@@ -1,0 +1,547 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+		<tab id="homepage_tabs" translate="label" sortOrder="10">
+            <label>Home Configurations</label>
+        </tab>
+        <section id="homepage_tabs" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Home Page Slider Configurations</label>
+            <tab>homepage_tabs</tab>
+            <resource>Mtwo_Configurations::configuration</resource>
+			 
+			<group id="tab_group_0" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Home Page Carousel / Banner images</label>
+                <field id="mainbanner" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Main Banner Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\BrandSlider</source_model>
+					<validate>required-entry</validate>
+                </field> 
+				<field id="bestcollection_title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Best Collections- Title</label>
+                 </field> 
+				<field id="bestcollection_subtitle" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Best Collections- Sub Title</label>
+                 </field>
+				<field id="bestcollection" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Best Collections</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\BrandSlider</source_model>
+					
+                </field> 
+				<field id="bestcollection_link" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Best Collection Link</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\Category</source_model>
+					                    <comment>Hidden If Category Selected - Default</comment>
+
+                </field>
+            </group>
+            <group id="tab_group_1" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Home Page Slider Group 1</label>
+     <field id="enable_tab" translate="label" type="select" showInDefault="1" canRestore="1">
+        <label>Enable / Disable</label>
+        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field> 
+	 <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+					
+                </field>
+				<field id="tabname" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Name</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\Category</source_model>
+                </field>
+                <field id="subtab1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Tab Name</label>
+					
+                </field>
+				<field id="productslider1" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field> 
+				<field id="subtab2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Tab Name</label>
+					
+                </field>
+				<field id="productslider2" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field> 
+				<field id="subtab3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Tab Name</label>
+					
+                </field>
+				<field id="productslider3" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field> 
+			 
+            </group>
+			<group id="tab_group_2" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Home Page Slider Group 2</label>
+                 <field id="enable_tab" translate="label" type="select" showInDefault="1" canRestore="1">
+        <label>Enable / Disable</label>
+        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field>
+		 <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+					
+                </field>
+				<field id="tabname" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Name</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\Category</source_model>
+					
+                </field>
+                <field id="subtab1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Tab Name</label>
+					
+                </field>
+				<field id="productslider1" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Tab Name</label>
+					
+                </field>
+				<field id="productslider2" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Tab Name</label>
+					
+                </field>
+				<field id="productslider3" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				
+			 
+				 
+            </group>
+			<group id="tab_group_3" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Home Page Slider Group 3</label>
+                 <field id="enable_tab" translate="label" type="select" showInDefault="1" canRestore="1">
+        <label>Enable / Disable</label>
+        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field>
+		 <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+					
+                </field>
+				<field id="tabname" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Name</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\Category</source_model>
+					
+                </field>
+                <field id="subtab1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Tab Name</label>
+					
+                </field>
+				<field id="productslider1" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Tab Name</label>
+					
+                </field>
+				<field id="productslider2" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Tab Name</label>
+					
+                </field>
+				<field id="productslider3" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+			 
+            </group>
+			<group id="tab_group_4" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Home Page Slider Group 4</label>
+                 <field id="enable_tab" translate="label" type="select" showInDefault="1" canRestore="1">
+        <label>Enable / Disable</label>
+        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field>
+		 <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+					
+                </field>
+				<field id="tabname" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Name</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\Category</source_model>
+					
+                </field>
+                <field id="subtab1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Tab Name</label>
+					
+                </field>
+				<field id="productslider1" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Tab Name</label>
+					
+                </field>
+				<field id="productslider2" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Tab Name</label>
+					
+                </field>
+				<field id="productslider3" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field> 
+            </group>
+			<group id="tab_group_5" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Home Page Slider Group 5</label>
+                 <field id="enable_tab" translate="label" type="select" showInDefault="1" canRestore="1">
+        <label>Enable / Disable</label>
+        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field>
+		 <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+					
+                </field>
+				<field id="tabname" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Name</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\Category</source_model>
+					
+                </field>
+                <field id="subtab1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Tab Name</label>
+					
+                </field>
+				<field id="productslider1" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Tab Name</label>
+					
+                </field>
+				<field id="productslider2" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Tab Name</label>
+					
+                </field>
+				<field id="productslider3" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field> 
+            </group>
+			<group id="tab_group_6" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Home Page Slider Group 6</label>
+                 <field id="enable_tab" translate="label" type="select" showInDefault="1" canRestore="1">
+        <label>Enable / Disable</label>
+        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field>
+		 <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+					
+                </field>
+				<field id="tabname" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Name</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\Category</source_model>
+					
+                </field>
+                <field id="subtab1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Tab Name</label>
+					
+                </field>
+				<field id="productslider1" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Tab Name</label>
+					
+                </field>
+				<field id="productslider2" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Tab Name</label>
+					
+                </field>
+				<field id="productslider3" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field> 
+            </group>
+			<group id="tab_group_7" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Home Page Slider Group 7</label>
+ <field id="enable_tab" translate="label" type="select" showInDefault="1" canRestore="1">
+        <label>Enable / Disable</label>
+        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field>         
+	 <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+					
+                </field>	
+			   <field id="tabname" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Name</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\Category</source_model>
+					
+                </field>
+                <field id="subtab1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Tab Name</label>
+					
+                </field>
+				<field id="productslider1" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Tab Name</label>
+					
+                </field>
+				<field id="productslider2" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Tab Name</label>
+					
+                </field>
+				<field id="productslider3" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field> 
+            </group>
+			<group id="tab_group_8" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Home Page Slider Group 8</label>
+                 <field id="enable_tab" translate="label" type="select" showInDefault="1" canRestore="1">
+        <label>Enable / Disable</label>
+        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field>
+		 <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+					
+                </field>
+				<field id="tabname" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Name</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\Category</source_model>
+					
+                </field>
+                <field id="subtab1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Tab Name</label>
+					
+                </field>
+				<field id="productslider1" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Tab Name</label>
+					
+                </field>
+				<field id="productslider2" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Tab Name</label>
+					
+                </field>
+				<field id="productslider3" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field> 
+            </group>
+			<group id="tab_group_9" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Home Page Slider Group 9</label>
+                 <field id="enable_tab" translate="label" type="select" showInDefault="1" canRestore="1">
+        <label>Enable / Disable</label>
+        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field>
+		 <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+					
+                </field>
+				<field id="tabname" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Name</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\Category</source_model>
+					
+                </field>
+                <field id="subtab1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Tab Name</label>
+					
+                </field>
+				<field id="productslider1" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Tab Name</label>
+					
+                </field>
+				<field id="productslider2" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Tab Name</label>
+					
+                </field>
+				<field id="productslider3" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field> 
+            </group>
+			<group id="tab_group_10" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Home Page Slider Group 10</label>
+                 <field id="enable_tab" translate="label" type="select" showInDefault="1" canRestore="1">
+        <label>Enable / Disable</label>
+        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field>
+		 <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+					
+                </field>
+				<field id="tabname" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Name</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\Category</source_model>
+					
+                </field>
+                <field id="subtab1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Tab Name</label>
+					
+                </field>
+				<field id="productslider1" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+					
+                </field>
+				 
+				<field id="subtab2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Second Tab Name</label>
+					
+                </field>
+				<field id="productslider2" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+                 </field>
+				 
+				<field id="subtab3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Third Tab Name</label>
+                 </field>
+				<field id="productslider3" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Choose Slider</label>
+					<source_model>Mtwo\Configurations\Model\Config\Source\ProductSlider</source_model>
+                 </field> 
+            </group>
+			
+			 
+			 
+        </section>
+		<section id="hours" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Working Hours</label>
+            <tab>homepage_tabs</tab>
+            <resource>Mtwo_Configurations::configuration</resource>
+			 
+			<group id="opening_hours" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Shop Opening Hours</label>				
+				 <field id="day1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Monday</label>
+                 </field> 
+				 <field id="day2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tuesday</label>
+                 </field> 
+				 <field id="day3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wednesday</label>
+                 </field> 
+				 <field id="day4" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Thursday</label>
+                 </field> 
+				 <field id="day5" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Friday</label>
+                 </field> 
+				 <field id="day6" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Saturday</label>
+                 </field> 
+				 <field id="day7" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sunday</label>
+                 </field> 
+            </group>
+            <group id="delivery_hours" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Shop Opening Hours</label>				
+				 <field id="day1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Monday</label>
+                 </field> 
+				 <field id="day2" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tuesday</label>
+                 </field> 
+				 <field id="day3" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wednesday</label>
+                 </field> 
+				 <field id="day4" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Thursday</label>
+                 </field> 
+				 <field id="day5" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Friday</label>
+                 </field> 
+				 <field id="day6" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Saturday</label>
+                 </field> 
+				 <field id="day7" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sunday</label>
+                 </field> 
+            </group>
+			 
+			 
+        </section>
+    </system>
+</config>

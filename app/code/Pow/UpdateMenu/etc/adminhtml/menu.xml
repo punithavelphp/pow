@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+   <menu>
+      <!-- <add id="Pow_UpdateMenu::menu"
+           title="Update" module="Pow_UpdateMenu"
+           sortOrder="10"
+           resource="Magento_Backend::content"
+           />
+           <add id="Pow_UpdateMenu::menu_item"
+           title="Products" module="Pow_UpdateMenu"
+           sortOrder="10" parent="Pow_UpdateMenu::menu"
+           action="updatemenu/create/index"
+           resource="Pow_UpdateMenu::menu_item"
+           /> -->
+   </menu>
+</config>

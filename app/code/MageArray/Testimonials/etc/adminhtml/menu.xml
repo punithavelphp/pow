@@ -1,0 +1,11 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+		<update id="MageArray_Core::core" title="Testimonials" module="MageArray_Testimonials" sortOrder="40" resource="MageArray_Testimonials::testimonials"/>
+		
+        <add id="MageArray_Testimonials::testimonials" title="Testimonials" module="MageArray_Testimonials" sortOrder="70" parent="MageArray_Core::core" resource="MageArray_Testimonials::testimonials"/>
+		
+        <add id="MageArray_Testimonials::manage_items" title="Testimonials" module="MageArray_Testimonials" sortOrder="80" parent="MageArray_Testimonials::testimonials" action="testimonials/index/" resource="MageArray_Testimonials::testimonials"/>
+		
+		<add id="MageArray_Testimonials::settings" title="Settings" module="MageArray_Testimonials" sortOrder="90" resource="MageArray_Testimonials::settings" action="adminhtml/system_config/edit/section/testimonials" parent="MageArray_Testimonials::testimonials"/>
+    </menu>
+</config>
